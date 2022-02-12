@@ -1,0 +1,18 @@
+{
+    "channels": [
+        {
+            "id": 1,
+            "name": "Geekyapar!",
+            "imgSrc": "https://yt3.ggpht.com/ytc/AKedOLSatGd5ljRtvsClGSOU9NEeBzPD9BifzGM3xV-QHA=s48-c-k-c0x00ffffff-no-rj",
+            "subscribers": 219353,
+            "verified": true
+        },
+        {
+            "id": 1,
+            "name": "Socrates Dergi",
+            "imgSrc": "https://i.ytimg.com/vi/BkCy6hx4qFs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAIppAmFPR8w2nm8I05Hrw7QXpZwg",
+            "subscribers": 350774,
+            "verified": true
+        }
+    ]
+}
