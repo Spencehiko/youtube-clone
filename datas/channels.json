@@ -8,10 +8,17 @@
             "verified": true
         },
         {
-            "id": 1,
+            "id": 2,
             "name": "Socrates Dergi",
-            "imgSrc": "https://i.ytimg.com/vi/BkCy6hx4qFs/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAIppAmFPR8w2nm8I05Hrw7QXpZwg",
+            "imgSrc": "https://yt3.ggpht.com/ytc/AKedOLQB8qFlQDaKgWes_yzdJlvK9aPrcZqfHx9p_kRWuA=s88-c-k-c0x00ffffff-no-rj",
             "subscribers": 350774,
+            "verified": true
+        },
+        {
+            "id": 3,
+            "name": "Evrim Ağacı",
+            "imgSrc": "https://yt3.ggpht.com/ytc/AKedOLQxNSOmlnm5gNav-eMRyobiguHe8vr7OLFYb8j7eA=s88-c-k-c0x00ffffff-no-rj",
+            "subscribers": 1291613,
             "verified": true
         }
     ]

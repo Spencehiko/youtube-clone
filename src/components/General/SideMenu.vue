@@ -280,6 +280,11 @@ export default defineComponent({
                 font-size: 14px;
                 line-height: 2rem;
                 font-weight: 500;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
         }
         hr.solid {
