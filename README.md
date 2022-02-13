@@ -1,6 +1,6 @@
 # youtube-clone
 
-Hi! This is a **Vue.js + Vuex + TypeScript + Jest + Cypress** implementation. In this I created a clone of YouTube (same UI as the real YouTube), and added **some** of the real functionalities as well.
+Hi! This is a **Vue.js + Vuex + TypeScript** implementation. In this I created a clone of YouTube (same UI as the real YouTube), and added **some** of the real functionalities as well.
 
 If you want to try it out you can simply click **Code > Copy Icon** and go to your Terminal/Cmd etc.
 
