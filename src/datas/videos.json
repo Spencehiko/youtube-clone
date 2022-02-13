@@ -219,6 +219,17 @@
             "likes": 2946,
             "dislikes": 9,
             "duration": 4316
+        },
+        {
+            "id": 21,
+            "channelId": 3,
+            "title": "Fotonlar Nasıl Dolanık Olabiliyor?",
+            "imgSrc": "https://i.ytimg.com/vi/CjkhHfWhUj8/hq720.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMe_oljAzoNuQyGnJAvDI0aHtrhw",
+            "date": "2022-02-12",
+            "views": 62114,
+            "likes": 5284,
+            "dislikes": 126,
+            "duration": 58
         }
     ]
 }
