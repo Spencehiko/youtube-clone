@@ -1,6 +1,5 @@
 <template>
   <div class="channels-filter">
-    TTT
   </div>
 </template>
 

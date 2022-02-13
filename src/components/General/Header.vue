@@ -1,7 +1,7 @@
 <template>
     <div class="nav">
         <div class="start">
-            <div class="sidemenu-icon">
+            <div class="sidemenu-icon" @click="toggleSidemenu()">
                 <svg
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
@@ -15,7 +15,7 @@
                 </svg>
             </div>
             <router-link to="/">
-                <div class="logo">
+                <div class="logo" title="YouTube Home Page">
                     <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/YouTube_social_white_squircle.svg/800px-YouTube_social_white_squircle.svg.png"
                         alt="HikoTube"
@@ -26,8 +26,15 @@
         </div>
         <div class="middle">
             <div class="search-container">
-                <input type="text" placeholder="Search" />
+                <input
+                    type="text"
+                    placeholder="Search"
+                    v-model="searchInput"
+                    id="searchInput"
+                />
                 <svg
+                    v-if="searchInput.length"
+                    @click="searchInput = ''"
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
                     focusable="false"
@@ -39,7 +46,7 @@
                     </g>
                 </svg>
             </div>
-            <button class="search-button" aria-labelledby="Search">
+            <button class="search-button" aria-label="Search">
                 <svg
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
@@ -52,7 +59,7 @@
                     </g>
                 </svg>
             </button>
-            <div class="voice-icon">
+            <button class="voice-icon" aria-label="Search with your voice">
                 <svg
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
@@ -64,10 +71,10 @@
                         ></path>
                     </g>
                 </svg>
-            </div>
+            </button>
         </div>
         <div class="end">
-            <div class="search-icon">
+            <button class="search-icon" aria-label="Search">
                 <svg
                     viewBox="0 0 24 24"
                     preserveAspectRatio="xMidYMid meet"
@@ -79,9 +86,9 @@
                         ></path>
                     </g>
                 </svg>
-            </div>
+            </button>
             <div class="buttons">
-                <div class="broadcast-icon">
+                <button aria-label="Create">
                     <svg
                         viewBox="0 0 24 24"
                         preserveAspectRatio="xMidYMid meet"
@@ -93,8 +100,8 @@
                             ></path>
                         </g>
                     </svg>
-                </div>
-                <div class="menu-icon">
+                </button>
+                <button aria-label="HikoTube Apps">
                     <svg
                         viewBox="0 0 24 24"
                         preserveAspectRatio="xMidYMid meet"
@@ -117,8 +124,8 @@
                             ></path>
                         </g>
                     </svg> -->
-                </div>
-                <div class="notification-icon">
+                </button>
+                <button aria-label="Notifications">
                     <svg
                         viewBox="0 0 24 24"
                         preserveAspectRatio="xMidYMid meet"
@@ -130,7 +137,7 @@
                             ></path>
                         </g>
                     </svg>
-                </div>
+                </button>
                 <button class="profile-picture">
                     <img
                         src="https://yt3.ggpht.com/yti/APfAmoG8vT7NxCVLJTt8SXQeNsPouLB11dVrDjqXoxS75w=s88-c-k-c0x00ffffff-no-rj-mo"
@@ -145,22 +152,26 @@
         > -->
     </div>
 </template>
+<script lang="ts">
+import { defineComponent } from 'vue';
+import store from '@/store';
+
+export default defineComponent({
+    name: 'App',
+    data() {
+        return {
+            searchInput: '',
+        }
+    },
+    methods: {
+        toggleSidemenu() {
+            store.commit('toggleSidemenu');
+        }
+    },
+});
+</script>
 <style lang="less" scoped>
-a {
-    text-decoration: none;
-    color: #fff;
-}
-svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    fill: #fff;
-    width: 24px;
-}
 .nav {
-    text-align: right;
-    font-size: 2.6em;
-    color: #fff;
     background: transparent;
     height: 56px;
     margin: 0 auto;
@@ -177,11 +188,17 @@ svg {
             width: 24px;
             margin: auto 0;
             padding: 8px;
+            cursor: pointer;
         }
         .logo {
             padding-left: 15px;
             display: inline-flex;
             cursor: pointer;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
             img {
                 max-width: 30px;
                 margin: 10px 3px 7px 0;
@@ -280,7 +297,10 @@ svg {
             -ms-flex-direction: row;
             -webkit-flex-direction: row;
             flex-direction: row;
-            div {
+            button {
+                background: transparent;
+                border: none;
+                outline: none;
                 padding: 0 12px;
                 display: -ms-flexbox;
                 display: -webkit-flex;
@@ -296,6 +316,11 @@ svg {
             outline: none;
             max-height: 56px;
             cursor: pointer;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
             img {
                 border-radius: 50%;
             }
