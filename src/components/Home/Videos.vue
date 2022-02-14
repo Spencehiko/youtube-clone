@@ -11,11 +11,11 @@
                 <div class="video-info">
                     <img
                         :src="getChannelPP(video.channelId)"
-                        :alt="getChannelName(video.channelId)"
+                        :title="getChannelName(video.channelId)"
                         class="video-channel-pp"
                     />
                     <div class="video-metadata">
-                        <span class="video-title">
+                        <span class="video-title" :title="video.title">
                             {{ video.title }}
                         </span>
                         <span class="video-channel-name">
@@ -126,25 +126,25 @@ export default defineComponent({
             }
         },
         getDateDifference(date: string) {
-          const today = new Date().valueOf();
-          const dateTime = new Date(date).valueOf();
-          const diffTime = today - dateTime;
-          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
-          if(diffDays < 1) {
-            return '9 hours ago';
-          }
-          if(diffDays < 7) {
-            return diffDays - 1 + (diffDays === 1 ? ' day ago' : ' days ago');
-          }
-          if(diffDays < 31) {
-            return Math.floor(diffDays / 7) + (Math.floor(diffDays / 7) === 1 ? ' week ago' : ' weeks ago')
-          }
-          if(diffDays < 365) {
-            return Math.floor(diffDays / 31) + (Math.floor(diffDays / 31) === 1 ? ' month ago' : ' months ago')
-          }
-          if(diffDays >=365) {
-            return Math.floor(diffDays / 365) + (Math.floor(diffDays / 365) === 1 ? ' year ago' : ' years ago')
-          }
+            const today = new Date().valueOf();
+            const dateTime = new Date(date).valueOf();
+            const diffTime = today - dateTime;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            if (diffDays < 1) {
+                return '9 hours ago';
+            }
+            if (diffDays < 7) {
+                return diffDays - 1 + (diffDays === 1 ? ' day ago' : ' days ago');
+            }
+            if (diffDays < 31) {
+                return Math.floor(diffDays / 7) + (Math.floor(diffDays / 7) === 1 ? ' week ago' : ' weeks ago')
+            }
+            if (diffDays < 365) {
+                return Math.floor(diffDays / 31) + (Math.floor(diffDays / 31) === 1 ? ' month ago' : ' months ago')
+            }
+            if (diffDays >= 365) {
+                return Math.floor(diffDays / 365) + (Math.floor(diffDays / 365) === 1 ? ' year ago' : ' years ago')
+            }
         }
     },
     beforeMount() {
@@ -221,6 +221,9 @@ export default defineComponent({
                         font-weight: 400;
                         font-size: 14px;
                         color: #aaa;
+                        &:hover {
+                            color: #fff;
+                        }
                     }
                     .video-data {
                         color: #aaa;
