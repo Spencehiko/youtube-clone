@@ -243,7 +243,7 @@ export default defineComponent({
             .video-options {
                 position: absolute;
                 top: 0;
-                right: 0;
+                right: -10px;
                 visibility: hidden;
                 svg {
                     height: 24px;
