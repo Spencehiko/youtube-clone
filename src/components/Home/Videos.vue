@@ -192,6 +192,7 @@ export default defineComponent({
         }
         .video-data {
             display: flex;
+            position: relative;
             .video-info {
                 display: flex;
                 .video-channel-pp {
@@ -240,6 +241,9 @@ export default defineComponent({
                 }
             }
             .video-options {
+                position: absolute;
+                top: 0;
+                right: 0;
                 visibility: hidden;
                 svg {
                     height: 24px;
@@ -254,8 +258,44 @@ export default defineComponent({
     &.fullPage {
         left: 0;
         .video {
-            flex-basis: 14%;
-            max-width: 15%;
+            flex-basis: 18%;
+            max-width: 18%;
+        }
+    }
+    @media screen and (max-width: 1330px) {
+        .video {
+            flex-basis: 31%;
+            max-width: 31%;
+        }
+        &.fullPage {
+            .video {
+                flex-basis: 23%;
+                max-width: 23%;
+            }
+        }
+    }
+    @media screen and (max-width: 884px) {
+        .video {
+            flex-basis: 48%;
+            max-width: 48%;
+        }
+        &.fullPage {
+            .video {
+                flex-basis: 31%;
+                max-width: 31%;
+            }
+        }
+    }
+    @media screen and (max-width: 658px) {
+        .video {
+            flex-basis: 98%;
+            max-width: 98%;
+        }
+        &.fullPage {
+            .video {
+                flex-basis: 48%;
+                max-width: 48%;
+            }
         }
     }
 }

@@ -182,6 +182,12 @@ export default defineComponent({
     justify-content: space-between;
     vertical-align: middle;
     font-size: 22px;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #202020;
     .start {
         display: flex;
         .sidemenu-icon {
@@ -334,6 +340,9 @@ export default defineComponent({
         }
         .search-icon {
             display: flex !important;
+        }
+        .buttons {
+            margin-left: 30px;
         }
     }
 }
