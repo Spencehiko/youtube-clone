@@ -1,0 +1,35 @@
+{
+    "tags": [{
+            "id": 1,
+            "name": "All"
+        },
+        {
+            "id": 2,
+            "name": "Music"
+        },
+        {
+            "id": 3,
+            "name": "Funny"
+        },
+        {
+            "id": 4,
+            "name": "Information"
+        },
+        {
+            "id": 5,
+            "name": "Watched"
+        },
+        {
+            "id": 6,
+            "name": "Podcasts"
+        },
+        {
+            "id": 7,
+            "name": "Shorts"
+        },
+        {
+            "id": 8,
+            "name": "Gaming"
+        }
+    ]
+}

@@ -397,7 +397,7 @@ export interface Channel {
 }
 
 export default defineComponent({
-    name: 'App',
+    name: 'SideMenu',
     data() {
         return {
             showSidemenu: true,
