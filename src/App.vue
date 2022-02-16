@@ -78,4 +78,17 @@ svg {
 [aria-label]:focus:after {
     display: block;
 }
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #181818;
+}
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #717171;
+}
 </style>

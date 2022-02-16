@@ -1,29 +1,5 @@
 <template>
-    <div class="sidemenu" v-if="showSidemenu">
-        <!-- <div class="start">
-            <div class="sidemenu-icon" @click="toggleSidemenu()">
-                <svg
-                    viewBox="0 0 24 24"
-                    preserveAspectRatio="xMidYMid meet"
-                    focusable="false"
-                >
-                    <g>
-                        <path
-                            d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z"
-                        ></path>
-                    </g>
-                </svg>
-            </div>
-            <router-link to="/">
-                <div class="logo" title="YouTube Home Page">
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/YouTube_social_white_squircle.svg/800px-YouTube_social_white_squircle.svg.png"
-                        alt="HikoTube"
-                    />
-                    <span>HikoTube</span>
-                </div>
-            </router-link>
-        </div> -->
+    <div class="sidemenu" :class="{ small: !showSidemenu }">
         <div class="items">
             <button class="active">
                 <svg
@@ -307,6 +283,104 @@
                 </div>
             </div>
         </div>
+        <div class="items-small">
+            <button class="active">
+                <svg
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                    focusable="false"
+                >
+                    <g>
+                        <path d="M4,10V21h6V15h4v6h6V10L12,3Z"></path>
+                    </g>
+                </svg>
+                <span>Home</span>
+            </button>
+            <button>
+                <svg
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                    focusable="false"
+                >
+                    <g>
+                        <path
+                            d="M9.8,9.8l-3.83,8.23l8.23-3.83l3.83-8.23L9.8,9.8z M13.08,12.77c-0.21,0.29-0.51,0.48-0.86,0.54 c-0.07,0.01-0.15,0.02-0.22,0.02c-0.28,0-0.54-0.08-0.77-0.25c-0.29-0.21-0.48-0.51-0.54-0.86c-0.06-0.35,0.02-0.71,0.23-0.99 c0.21-0.29,0.51-0.48,0.86-0.54c0.35-0.06,0.7,0.02,0.99,0.23c0.29,0.21,0.48,0.51,0.54,0.86C13.37,12.13,13.29,12.48,13.08,12.77z M12,3c4.96,0,9,4.04,9,9s-4.04,9-9,9s-9-4.04-9-9S7.04,3,12,3 M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2 L12,2z"
+                        ></path>
+                    </g>
+                </svg>
+                <span>Explore</span>
+            </button>
+            <button>
+                <svg
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                    focusable="false"
+                >
+                    <g>
+                        <path
+                            d="M10,18v-6l5,3L10,18z M17,3H7v1h10V3z M20,6H4v1h16V6z M22,9H2v12h20V9z M3,10h18v10H3V10z"
+                        ></path>
+                    </g>
+                </svg>
+                <span>Subscriptions</span>
+            </button>
+            <button>
+                <svg
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                    focusable="false"
+                >
+                    <g>
+                        <path
+                            d="M10,9.35,15,12l-5,2.65ZM12,6a54.36,54.36,0,0,0-7.56.38A1.53,1.53,0,0,0,3.38,7.44,24.63,24.63,0,0,0,3,12a24.63,24.63,0,0,0,.38,4.56,1.53,1.53,0,0,0,1.06,1.06A54.36,54.36,0,0,0,12,18a54.36,54.36,0,0,0,7.56-.38,1.53,1.53,0,0,0,1.06-1.06A24.63,24.63,0,0,0,21,12a24.63,24.63,0,0,0-.38-4.56,1.53,1.53,0,0,0-1.06-1.06A54.36,54.36,0,0,0,12,6h0m0-1s6.25,0,7.81.42a2.51,2.51,0,0,1,1.77,1.77A25.87,25.87,0,0,1,22,12a25.87,25.87,0,0,1-.42,4.81,2.51,2.51,0,0,1-1.77,1.77C18.25,19,12,19,12,19s-6.25,0-7.81-.42a2.51,2.51,0,0,1-1.77-1.77A25.87,25.87,0,0,1,2,12a25.87,25.87,0,0,1,.42-4.81A2.51,2.51,0,0,1,4.19,5.42C5.75,5,12,5,12,5Z"
+                        ></path>
+                    </g>
+                </svg>
+                <span>Originals</span>
+            </button>
+            <button>
+                <svg
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                    focusable="false"
+                >
+                    <g>
+                        <path
+                            d="M10 9.35L15 12l-5 2.65zM12 7a5 5 0 105 5 5 5 0 00-5-5m0-1a6 6 0 11-6 6 6 6 0 016-6zm0-3a9 9 0 109 9 9 9 0 00-9-9m0-1A10 10 0 112 12 10 10 0 0112 2z"
+                        ></path>
+                    </g>
+                </svg>
+                <span>HikoTube Music</span>
+            </button>
+            <button>
+                <svg
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                    focusable="false"
+                >
+                    <g>
+                        <path
+                            d="M11,7l6,3.5L11,14V7L11,7z M18,20H4V6H3v15h15V20z M21,18H6V3h15V18z M7,17h13V4H7V17z"
+                        ></path>
+                    </g>
+                </svg>
+                <span>Library</span>
+            </button>
+            <button>
+                <svg
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="xMidYMid meet"
+                    focusable="false"
+                >
+                    <g>
+                        <path
+                            d="M17 18V19H6V18H17ZM16.5 11.4L15.8 10.7L12 14.4V4H11V14.4L7.2 10.6L6.5 11.3L11.5 16.3L16.5 11.4Z"
+                        ></path>
+                    </g>
+                </svg>
+                <span>Downloads</span>
+            </button>
+        </div>
     </div>
 </template>
 <script lang="ts">
@@ -351,41 +425,7 @@ export default defineComponent({
     left: 0;
     background: #212121;
     width: 240px;
-    transition-duration: 200ms;
-    transform: all 1s;
     overflow-y: hidden;
-    .start {
-        display: flex;
-        background: #202020;
-        height: 46px;
-        padding: 4.5px 16px;
-        .sidemenu-icon {
-            width: 24px;
-            margin: auto 0;
-            padding: 8px;
-            cursor: pointer;
-        }
-        .logo {
-            padding-left: 15px;
-            display: inline-flex;
-            cursor: pointer;
-            -webkit-touch-callout: none; /* iOS Safari */
-            -webkit-user-select: none; /* Safari */
-            -moz-user-select: none; /* Old versions of Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-            img {
-                max-width: 30px;
-                margin: 10px 3px 7px 0;
-            }
-            span {
-                margin: auto 0;
-                font-family: "Oswald", sans-serif;
-                font-weight: 400;
-                font-size: 20px;
-            }
-        }
-    }
     .items {
         margin-top: 10px;
         button {
@@ -393,7 +433,7 @@ export default defineComponent({
             background: transparent;
             outline: none;
             border: none;
-            width: 100%;
+            width: 93%;
             align-items: center;
             height: 40px;
             padding: 0 24px;
@@ -448,15 +488,67 @@ export default defineComponent({
             }
         }
     }
+    .items-small {
+        display: none;
+    }
     &:hover {
         overflow-y: auto;
+        .items {
+            button {
+                width: calc(93% + 7px);
+            }
+        }
     }
-}
-::-webkit-scrollbar {
-    width: 8px;
+    &.small {
+        width: 72px;
+        overflow-y: hidden;
+        .items,
+        .footer {
+            display: none;
+        }
+        .items-small {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+            button {
+                display: flex;
+                flex-direction: column;
+                background: transparent;
+                padding: 16px 0 14px;
+                outline: none;
+                border: none;
+                width: 100%;
+                align-items: center;
+                cursor: pointer;
+                &:hover {
+                    background: #383838;
+                }
+                svg {
+                    border-radius: 50%;
+                    width: 24px;
+                    height: 24px;
+                }
+                span {
+                    margin: auto 0;
+                    color: #fff;
+                    font-family: "Roboto", "Arial", sans-serif;
+                    font-size: 10px;
+                    line-height: 1rem;
+                    font-weight: 500;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+            }
+        }
+    }
 }
 ::-webkit-scrollbar-thumb {
     background: #717171;
-    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #212121;
 }
 </style>

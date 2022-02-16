@@ -256,7 +256,7 @@ export default defineComponent({
         }
     }
     &.fullPage {
-        left: 0;
+        left: 72px;
         .video {
             flex-basis: 18%;
             max-width: 18%;
