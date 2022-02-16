@@ -1,7 +1,11 @@
 <template>
     <div class="tags" :class="{ fullPage: !showSidemenu }">
         <div class="tags-wrapper">
-            <button v-for="tag in tags" :key="tag.id">
+            <button
+                v-for="tag in tags"
+                :key="tag.id"
+                :class="{ active: tag.id === 1 }"
+            >
                 {{ tag.name }}
             </button>
         </div>
@@ -35,24 +39,25 @@ export default defineComponent({
 </script>
 <style lang="less" scoped>
 .tags {
-    position: absolute;
     background: #202020;
-    left: 240px;
     width: calc(100% - 240px);
-    top: 60px;
+    margin-left: 240px;
+    margin-top: 60px;
     z-index: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0 30px;
     &-wrapper {
+        position: relative;
         button {
             margin: 12px;
             margin-left: 0;
+            min-width: 12px;
+            padding: 0 12px;
             color: #fff;
             background-color: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0 12px;
-            transition: background-color 0.5s cubic-bezier(0.05, 0, 0, 1);
             height: 32px;
-            min-width: 12px;
-            padding: 0 10px;
             border-radius: 16px;
             box-sizing: border-box;
             outline: none;
@@ -60,19 +65,25 @@ export default defineComponent({
             cursor: pointer;
             user-select: none;
             position: relative;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -ms-flex-direction: row;
-            -webkit-flex-direction: row;
             flex-direction: row;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
             align-items: center;
-            display: -ms-inline-flexbox;
-            display: -webkit-inline-flex;
             display: inline-flex;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 2rem;
+            letter-spacing: .2px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-family: Roboto, Arial, sans-serif;
+            &.active {
+                background: #fff;
+                color: #030303;
+            }
         }
+    }
+    &.fullPage {
+        margin-left: 72px;
+        width: calc(100% - 72px);
     }
 }
 </style>

@@ -159,9 +159,7 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 .videos {
-    position: absolute;
-    left: 240px;
-    top: 60px;
+    margin-left: 240px;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -256,7 +254,7 @@ export default defineComponent({
         }
     }
     &.fullPage {
-        left: 72px;
+        margin-left: 72px;
         .video {
             flex-basis: 18%;
             max-width: 18%;
