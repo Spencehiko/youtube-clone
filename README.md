@@ -15,4 +15,5 @@ Then, you are ready to give it a shot! Just type
     npm run serve
 and you will see the project in your browser!
 
-![image](https://user-images.githubusercontent.com/40501852/153779333-5489443a-19e1-4465-be89-3a2e44f2e29c.png)
+![image](https://user-images.githubusercontent.com/40501852/154514846-c6192f5f-60ed-4bae-be00-b5ad3ee61520.png)
+
