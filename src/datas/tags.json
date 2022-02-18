@@ -30,6 +30,10 @@
         {
             "id": 8,
             "name": "Gaming"
+        },
+        {
+            "id": 9,
+            "name": "Clip"
         }
     ]
 }

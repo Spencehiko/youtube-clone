@@ -18,9 +18,23 @@
                         <span class="video-title" :title="video.title">
                             {{ video.title }}
                         </span>
-                        <span class="video-channel-name">
-                            {{ getChannelName(video.channelId) }}
-                        </span>
+                        <div class="video-channel-data">
+                            <span class="video-channel-name">
+                                {{ getChannelName(video.channelId) }}
+                            </span>
+                            <svg
+                                v-if="getChannelVerified(video.channelId)"
+                                viewBox="0 0 24 24"
+                                preserveAspectRatio="xMidYMid meet"
+                                focusable="false"
+                            >
+                                <g>
+                                    <path
+                                        d="M12,2C6.5,2,2,6.5,2,12c0,5.5,4.5,10,10,10s10-4.5,10-10C22,6.5,17.5,2,12,2z M9.8,17.3l-4.2-4.1L7,11.8l2.8,2.7L17,7.4 l1.4,1.4L9.8,17.3z"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
                         <div class="video-statistics">
                             <span class="video-views">
                                 {{ parseViews(video.views) + " views" }}
@@ -104,12 +118,15 @@ export default defineComponent({
         getChannelName(channelId: number): string {
             return this.channels.filter((channel) => channel.id === channelId)[0].name;
         },
+        getChannelVerified(channelId: number): boolean {
+            return this.channels.filter((channel) => channel.id === channelId)[0].verified;
+        },
         convertTime(duration: number) {
             const hours = Math.floor(duration / 3600);
             const durationMod = duration %= 3600;
             const minutes = Math.floor(durationMod / 60);
             const seconds = durationMod % 60;
-            return (hours > 0 ? hours + ':' : '') + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds)
+            return (hours > 0 ? hours + ':' : '') + ((hours > 0 && minutes < 10) ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds)
         },
         parseViews(views: number) {
             if (views <= 999) {
@@ -216,12 +233,21 @@ export default defineComponent({
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-                    .video-channel-name {
-                        font-weight: 400;
-                        font-size: 14px;
-                        color: #aaa;
-                        &:hover {
-                            color: #fff;
+                    .video-channel-data {
+                        display: flex;
+                        .video-channel-name {
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: #aaa;
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                        svg {
+                            fill: #aaa;
+                            width: 14px;
+                            height: 14px;
+                            margin-left: 4px;
                         }
                     }
                     .video-data {
