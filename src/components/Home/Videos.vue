@@ -1,6 +1,11 @@
 <template>
     <div class="videos" :class="{ fullPage: !showSidemenu }">
-        <div class="video" v-for="video in shuffle(videos)" :key="video.id">
+        <router-link
+            class="video"
+            v-for="video in shuffle(videos)"
+            :key="video.id"
+            :to="'/video?v=' + video.id"
+        >
             <div class="thumbnail">
                 <img :src="video.imgSrc" :alt="video.title" />
                 <div class="duration">
@@ -19,9 +24,12 @@
                             {{ video.title }}
                         </span>
                         <div class="video-channel-data">
-                            <span class="video-channel-name">
+                            <router-link
+                                class="video-channel-name"
+                                :to="'/channel?id=' + video.channelId"
+                            >
                                 {{ getChannelName(video.channelId) }}
-                            </span>
+                            </router-link>
                             <svg
                                 v-if="getChannelVerified(video.channelId)"
                                 viewBox="0 0 24 24"
@@ -59,7 +67,7 @@
                     </svg>
                 </div>
             </div>
-        </div>
+        </router-link>
     </div>
 </template>
 
@@ -205,11 +213,12 @@ export default defineComponent({
                 font-weight: 500;
             }
         }
-        .video-data {
+        &-data {
             display: flex;
             position: relative;
             .video-info {
                 display: flex;
+                width: 90%;
                 .video-channel-pp {
                     width: 36px;
                     height: 36px;
