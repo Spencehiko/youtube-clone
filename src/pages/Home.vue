@@ -17,10 +17,10 @@ import Tags from '@/components/Home/Tags.vue';
 export default defineComponent({
     name: 'Home',
     components: {
-    Header,
-    SideMenu,
-    Videos,
-    Tags
-},
+        Header,
+        SideMenu,
+        Videos,
+        Tags
+    },
 });
 </script>

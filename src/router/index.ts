@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../pages/Home.vue'
 import Video from '../pages/Video.vue'
+import Channel from '../pages/Channel.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -12,6 +13,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/video',
     name: 'Video',
     component: Video
+  },
+  {
+    path: '/channel',
+    name: 'Channel',
+    component: Channel
   }
 ]
 
